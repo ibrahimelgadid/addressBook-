@@ -170,7 +170,7 @@ export const updateContactById = asyncHandler(
 //---------------------------------------------|
 export const deleteContactById = asyncHandler(
   async (req: Request, res: Response) => {
-    const deletedContact = await Contact.deleteOne({
+    const deletedContact = await Contact.findOneAndDelete({
       _id: req.params.contactId,
     });
     if (deletedContact) {

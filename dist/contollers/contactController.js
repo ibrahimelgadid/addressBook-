@@ -148,7 +148,7 @@ exports.updateContactById = (0, express_async_handler_1.default)(async (req, res
 //           Delete Contact By ID functionality
 //---------------------------------------------|
 exports.deleteContactById = (0, express_async_handler_1.default)(async (req, res) => {
-    const deletedContact = await contactModel_1.default.deleteOne({
+    const deletedContact = await contactModel_1.default.findOneAndDelete({
         _id: req.params.contactId,
     });
     if (deletedContact) {
