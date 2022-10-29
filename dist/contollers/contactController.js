@@ -47,13 +47,15 @@ exports.createContact = (0, express_async_handler_1.default)(async (req, res) =>
 exports.createBulkContacts = (0, express_async_handler_1.default)(async (req, res) => {
     const contacts = req.body;
     let valid = true;
-    contacts.forEach(async (contact) => {
-        let { isValid, errors } = (0, contactValidate_1.default)(contact);
-        if (!isValid) {
-            valid = false;
-            res.status(400).json(errors);
-        }
-    });
+    contacts
+        ? contacts.forEach(async (contact) => {
+            let { isValid, errors } = (0, contactValidate_1.default)(contact);
+            if (!isValid) {
+                valid = false;
+                res.status(400).json(errors);
+            }
+        })
+        : null;
     if (valid) {
         let newContacts = await contactModel_1.default.insertMany(contacts);
         if (newContacts) {
@@ -129,7 +131,7 @@ exports.updateContactById = (0, express_async_handler_1.default)(async (req, res
     if (!existContactName) {
         const updatedContact = await contactModel_1.default.findOneAndUpdate({ _id: req.params.contactId }, {
             $set: req.body,
-        });
+        }, { new: true });
         if (updatedContact) {
             res.status(200).json(updatedContact);
         }

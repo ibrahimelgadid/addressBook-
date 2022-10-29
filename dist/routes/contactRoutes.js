@@ -29,4 +29,8 @@ router
     .get(authMiddleware_1.protect, contactController_1.getContactById)
     .put(authMiddleware_1.protect, contactController_1.updateContactById)
     .delete(authMiddleware_1.protect, contactController_1.deleteContactById);
+// @route /todo/contact/search
+// @access private user
+//@type get and put and delete
+router.route("/search").get(authMiddleware_1.protect, contactController_1.getContactsBySearch);
 exports.default = router;

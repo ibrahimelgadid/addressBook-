@@ -50,13 +50,15 @@ export const createBulkContacts = asyncHandler(
     const contacts = req.body;
     let valid = true;
 
-    contacts.forEach(async (contact: { name: string; phone: string }) => {
-      let { isValid, errors } = validateContactInputs(contact);
-      if (!isValid) {
-        valid = false;
-        res.status(400).json(errors);
-      }
-    });
+    contacts
+      ? contacts.forEach(async (contact: { name: string; phone: string }) => {
+          let { isValid, errors } = validateContactInputs(contact);
+          if (!isValid) {
+            valid = false;
+            res.status(400).json(errors);
+          }
+        })
+      : null;
 
     if (valid) {
       let newContacts = await Contact.insertMany(contacts);
@@ -102,7 +104,6 @@ export const getContactsBySearch = asyncHandler(
     const contacts = await Contact.find({
       name: { $regex: search, $options: "i" },
     })
-
       .limit(limit)
       .skip((page - 1) * limit);
 
@@ -148,7 +149,8 @@ export const updateContactById = asyncHandler(
         { _id: req.params.contactId },
         {
           $set: req.body,
-        }
+        },
+        { new: true }
       );
 
       if (updatedContact) {

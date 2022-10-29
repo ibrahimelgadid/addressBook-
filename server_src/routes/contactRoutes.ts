@@ -9,6 +9,7 @@ import {
   updateContactById,
   deleteContactById,
   createBulkContacts,
+  getContactsBySearch,
 } from "../contollers/contactController";
 const router: Router = Router();
 
@@ -39,5 +40,10 @@ router
   .get(protect, getContactById)
   .put(protect, updateContactById)
   .delete(protect, deleteContactById);
+
+// @route /todo/contact/search
+// @access private user
+//@type get and put and delete
+router.route("/search").get(protect, getContactsBySearch);
 
 export default router;
