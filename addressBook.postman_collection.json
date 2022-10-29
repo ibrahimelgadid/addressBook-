@@ -1,0 +1,377 @@
+{
+	"info": {
+		"_postman_id": "b1fa9456-8f90-41b8-b34b-2a4d9fc7c521",
+		"name": "addressBook",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "ahmed",
+									"type": "default"
+								},
+								{
+									"key": "email",
+									"value": "ahmed@ahmed.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "1111",
+									"type": "default"
+								},
+								{
+									"key": "confirmPassword",
+									"value": "1111",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/auth/register",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "email",
+									"value": "hima@hima.com",
+									"type": "default"
+								},
+								{
+									"key": "password",
+									"value": "1111",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/auth/login",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"auth",
+								"login"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": null,
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "contacts",
+			"item": [
+				{
+					"name": "getAllContacts",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/contacts?page=1",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contacts"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContactById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/contacts/id/635d94073f7bdac73564d7db",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contacts",
+								"id",
+								"635d94073f7bdac73564d7db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getContactsBySearch",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/contacts/search?search=alaa",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contacts",
+								"search"
+							],
+							"query": [
+								{
+									"key": "search",
+									"value": "alaa"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createContact",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "sally",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "01202455447866",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/contacts",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "createBulk",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "[\r\n    {\r\n        \"name\":\"sayed\",\r\n        \"phone\":\"0145445447555555\"\r\n    },\r\n    {\r\n        \"name\":\"saber\",\r\n        \"phone\":\"0145445447558955\"\r\n    },\r\n    {\r\n        \"name\":\"nour\",\r\n        \"phone\":\"0145445447559588\"\r\n    }\r\n]",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://address-book2022.herokuapp.comcontacts/bulkContacts",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"comcontacts"
+							],
+							"path": [
+								"bulkContacts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "updateContactById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "name",
+									"value": "Hussien",
+									"type": "default"
+								},
+								{
+									"key": "phone",
+									"value": "2554444444444444",
+									"type": "default"
+								}
+							]
+						},
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com//contacts/id/635d94073f7bdac73564d7db",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"",
+								"contacts",
+								"id",
+								"635d94073f7bdac73564d7db"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deleteContactById",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYzNWQ5MjkwM2RkMTMyNzE5Yzc0MWI4ZSIsInVzZXJuYW1lIjoiaGltYSIsImVtYWlsIjoiaGltYUBoaW1hLmNvbSIsImlhdCI6MTY2NzA3NzI0MCwiZXhwIjoxNjY5NjY5MjQwfQ.vkfc2IrGMsU9nL_n96qlT4t7_iXHyRnebFjz5K838Us",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "https://address-book2022.herokuapp.com/contacts/id/635d8b26b38431fbb90fdf6b",
+							"protocol": "https",
+							"host": [
+								"address-book2022",
+								"herokuapp",
+								"com"
+							],
+							"path": [
+								"contacts",
+								"id",
+								"635d8b26b38431fbb90fdf6b"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
