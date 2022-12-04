@@ -50,7 +50,8 @@
                 in body insert these fields
                       [
                         {
-                          name,phone
+                          name,
+                          phone
                         }
                       ]
 
