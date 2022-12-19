@@ -6,7 +6,7 @@
       in postman
 
       -----> to register
-            POST https://address-book2022.herokuapp.com/auth/register
+            POST https://address-book-green.vercel.app/auth/register
 
                   in body insert these fields
                       username
@@ -17,7 +17,7 @@
 
 
       -----> to login
-            POST https://address-book2022.herokuapp.com/auth/login
+            POST https://address-book-green.vercel.app/auth/login
 
                   in body insert these fields
                       email
@@ -25,19 +25,19 @@
 
 
       -----> to get all contacts
-            GET https://address-book2022.herokuapp.com/contacts?page=1
+            GET https://address-book-green.vercel.app/contacts?page=1
 
 
       -----> to get single contact
-            GET https://address-book2022.herokuapp.com/contacts/id/:id
+            GET https://address-book-green.vercel.app/contacts/id/:id
 
 
       -----> to get contacts by search
-            GET https://address-book2022.herokuapp.com/contacts/search?search=alaa
+            GET https://address-book-green.vercel.app/contacts/search?search=alaa
 
 
       -----> to add new contacts
-            POST https://address-book2022.herokuapp.com/contacts
+            POST https://address-book-green.vercel.app/contacts
 
                 in body insert these fields
                       name
@@ -45,7 +45,7 @@
 
 
       -----> to add many contacts
-            POST https://address-book2022.herokuapp.comcontacts/bulkContacts
+            POST https://address-book-green.vercel.app/contacts/bulkContacts
 
                 in body insert these fields
                       [
@@ -57,7 +57,7 @@
 
 
       -----> to update contact
-            PUT https://address-book2022.herokuapp.com/contacts/id/:id
+            PUT https://address-book-green.vercel.app/contacts/id/:id
 
                 in body insert these fields
                           name
@@ -65,4 +65,4 @@
 
 
       -----> to delete contact
-            DELETE https://address-book2022.herokuapp.com/contacts/id/:id
+            DELETE https://address-book-green.vercel.app/contacts/id/:id
